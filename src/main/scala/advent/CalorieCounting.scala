@@ -6,32 +6,20 @@ import solutions.shitops.advent.util.ResourceReader
 
 object CalorieCounting {
 
-  case class Elf(val index: Int, val items: List[Int]) {
-    def totalCalories = items.foldLeft(0)(_ + _)
+  case class Elf(val items: List[Int]) {
+    def totalCalories = items.sum
   }
 
+  def elves: List[Elf] = ResourceReader
+    .readString("calorie-counting.input")
+    .split("\n\n")
+    .map(str => Elf(str.split("\n").map(_.toInt).toList))
+    .toList
 
-  def elves: List[Elf] = {
-    val entries : List[String] = ResourceReader.readLines("calorie-counting.input")
-    var index = 1
-    var elfs = new ListBuffer[Elf]()
-    var next = Elf(index, List())
-
-    for (entry <- entries) {
-      if (entry == "") {
-        elfs += next
-        index += 1
-        next = Elf(index, List())
-      } else {
-        next = Elf(next.index, next.items :+ entry.toInt)
-      }
-    }
-    elfs += next // Poor last elf
-    elfs.toList
-  }
-
-  def sortedElves = elves.map(_.totalCalories).sorted(Ordering[Int].reverse)
-  def max = sortedElves.take(1).sum
+  def sortedElves = elves
+    .map(_.totalCalories)
+    .sorted(Ordering[Int].reverse)
+  def max         = sortedElves.take(1).sum
   def topThreeSum = sortedElves.take(3).sum
 }
 

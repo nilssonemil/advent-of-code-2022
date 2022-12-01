@@ -8,15 +8,18 @@ import scala.io.Source
 import solutions.shitops.advent.CalorieCounting._
 
 class ColorieCountingSuite extends AnyFunSuite {
-  
+
   test("elfs recognized") {
-    assert(elves == List(
-      Elf(1, List(1000, 2000, 3000)),
-      Elf(2, List(4000)),
-      Elf(3, List(5000, 6000)),
-      Elf(4, List(7000, 8000, 9000)),
-      Elf(5, List(10000))))
-  } 
+    assert(
+      elves == List(
+        Elf(List(1000, 2000, 3000)),
+        Elf(List(4000)),
+        Elf(List(5000, 6000)),
+        Elf(List(7000, 8000, 9000)),
+        Elf(List(10000)),
+      ),
+    )
+  }
 
   test("Total calories") {
     assert(elves.map(_.totalCalories) == List(6000, 4000, 11000, 24000, 10000))
@@ -38,4 +41,3 @@ class ColorieCountingSuite extends AnyFunSuite {
     assert(topThreeSum == 45000)
   }
 }
-
