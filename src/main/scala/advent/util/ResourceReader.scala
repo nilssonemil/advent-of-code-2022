@@ -1,5 +1,4 @@
-package solutions.shitops
-package util
+package solutions.shitops.advent.util
 import scala.io.Source
 
 object ResourceReader {
