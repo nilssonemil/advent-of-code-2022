@@ -6,18 +6,18 @@ import solutions.shitops.advent.TuningTable._
 class TuningTableSuite extends AnyFunSuite {
 
   test("first start of packet found") {
-    assert(startOfPacketMarker("mjqjpqmgbljsphdztnvjfqwrcgsmlb") == 7)
-    assert(startOfPacketMarker("bvwbjplbgvbhsrlpgdmjqwftvncz") == 5)
-    assert(startOfPacketMarker("nppdvjthqldpwncqszvftbrmjlhg") == 6)
-    assert(startOfPacketMarker("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg") == 10)
-    assert(startOfPacketMarker("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw") == 11)
+    assert(startOfPacketCompleted("mjqjpqmgbljsphdztnvjfqwrcgsmlb") == 7)
+    assert(startOfPacketCompleted("bvwbjplbgvbhsrlpgdmjqwftvncz") == 5)
+    assert(startOfPacketCompleted("nppdvjthqldpwncqszvftbrmjlhg") == 6)
+    assert(startOfPacketCompleted("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg") == 10)
+    assert(startOfPacketCompleted("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw") == 11)
   }
 
   test("first start of message found") {
-    assert(startOfMessageMarker("mjqjpqmgbljsphdztnvjfqwrcgsmlb") == 19)
-    assert(startOfMessageMarker("bvwbjplbgvbhsrlpgdmjqwftvncz") == 23)
-    assert(startOfMessageMarker("nppdvjthqldpwncqszvftbrmjlhg") == 23)
-    assert(startOfMessageMarker("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg") == 29)
-    assert(startOfMessageMarker("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw") == 26)
+    assert(startOfMessageCompleted("mjqjpqmgbljsphdztnvjfqwrcgsmlb") == 19)
+    assert(startOfMessageCompleted("bvwbjplbgvbhsrlpgdmjqwftvncz") == 23)
+    assert(startOfMessageCompleted("nppdvjthqldpwncqszvftbrmjlhg") == 23)
+    assert(startOfMessageCompleted("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg") == 29)
+    assert(startOfMessageCompleted("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw") == 26)
   }
 }
