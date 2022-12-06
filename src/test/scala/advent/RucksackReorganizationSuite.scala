@@ -1,6 +1,7 @@
 package solutions.shitops.advent
 
 import org.scalatest.funsuite.AnyFunSuite
+import solutions.shitops.advent.RuckSackReorganization._
 
 class RucksackReorganizationSuite extends AnyFunSuite {
 
